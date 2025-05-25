@@ -11,18 +11,18 @@ At a  high level, to deploy the microservice to the cloud we need to:
 
 ## DETAILED STEPS:
 1.	In Google Cloud on web browser follow instructions to sign up 
-2.	Download Google Cloud  Command Line Interface (follow instructions for your operating system)	
-3.	Sign in / authenticate via Googe Cloud CLI & set it up with docker 
-  a.	`gcloud auth configure-docker australia-southeast1-docker.pkg.dev`
-4.	Set the project ID in your CLI via taking the project ID in console.google.com and copying it into the following command 
-   a.	`gcloud config set project <projectID>` 
-5.	enable the artifact registry via: 
-  a.	`gcloud services enable artifactregistry.googleapis.com`
-6.	Tag the image with your gcp project url 
-  a.	`docker tag  <your-image-name> australia-southeast1-docker.pkg.dev/<rest-of-your-GCP-url>`
-7.	Push the image to GCP 
-   a.	`docker push <your-image-name> australia-southeast1-docker.pkg.dev/<rest-of-your-GCP-url>`
-8.	Pull & run the image to test if it works 
-  a.	`docker pull <your-image-name> australia-southeast1-docker.pkg.dev/<rest-of-your-GCP-url>`
-  b.	`docker run -p 8080:3000 <your-image-name> australia-southeast1-docker.pkg.dev/<rest-of-your-GCP-url>`
-9.	View your localhost to your mapped port, e.g. localhost:3030 in your web browser and see if your app works at that url 
+2.	Download Google Cloud  Command Line Interface (follow instructions for your operating system)	https://cloud.google.com/sdk/docs/install
+3.	Sign in / authenticate via Googe Cloud CLI & set it up with docker
+   - 	`gcloud auth configure-docker australia-southeast1-docker.pkg.dev`
+5.	Set the project ID in your CLI via taking the project ID in console.google.com and copying it into the following command 
+ 	- `gcloud config set project <projectID>` 
+6.	enable the artifact registry via: 
+  -	`gcloud services enable artifactregistry.googleapis.com`
+7.	Tag the image with your gcp project url 
+    -	`docker tag  <your-image-name> australia-southeast1-docker.pkg.dev/<rest-of-your-GCP-url>`
+8.	Push the image to GCP 
+   -	`docker push <your-image-name> australia-southeast1-docker.pkg.dev/<rest-of-your-GCP-url>`
+9.	Pull & run the image to test if it works 
+  -	`docker pull <your-image-name> australia-southeast1-docker.pkg.dev/<rest-of-your-GCP-url>`
+  - `docker run -p 8080:3000 <your-image-name> australia-southeast1-docker.pkg.dev/<rest-of-your-GCP-url>`
+10.	View your localhost to your mapped port, e.g. localhost:3030 in your web browser and see if your app works at that url 
